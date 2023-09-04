@@ -30,5 +30,33 @@ console.log(myStr2);
     \b	  backspace
     \f	  form feed
 */
-const myStr = "FirstLine\n\t\\SecondLine\nThirdLine";
-console.log(myStr);
+const myStr3 = "FirstLine\n\t\\SecondLine\nThirdLine";
+console.log(myStr3);
+
+
+
+/** Understand 'String' Immutability
+
+ * In JavaScript, String values are **immutable**, which means that they cannot be altered once created.
+ * 
+ * For example, the following code will produce an error because the letter B in the string Bob cannot be changed to the letter J:
+ * 
+ * let myStr = "Bob";
+ * myStr[0] = "J";
+ * Note that this does not mean that myStr could not be re-assigned. The only way to change myStr would be to assign it with a new value, like this:
+ * 
+ * let myStr = "Bob";
+ * myStr = "Job"; 
+*/
+
+/* Not like this. */
+
+let myStr4 = "Jello World";
+myStr4[0] = "H";
+console.log(myStr4);
+
+/* But like this! */
+
+let myStr5 = "Jello World";
+myStr5 = "Hello World";
+console.log(myStr5);
