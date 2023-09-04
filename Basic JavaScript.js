@@ -84,3 +84,19 @@ const secondToLastLetterOfLastName = lastName2[lastName2.length - 2];
  * 
  * This is also called a 'multi-dimensional array'.
 */
+
+const myArray1 = [['str'], [1], [true]];
+
+
+
+/** Modify Array Data With Indexes 
+ * Unlike 'strings', the entries of arrays are *mutable* and can be changed freely, 
+   even if the array was declared with const. 
+ * Note: There shouldn't be any spaces between the array name and the square brackets, like array [0]. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
+*/
+
+const myArray2 = [18, 64, 99];
+myArray[0] = 45;
+
+
+
