@@ -60,3 +60,20 @@ console.log(myStr4);
 let myStr5 = "Jello World";
 myStr5 = "Hello World";
 console.log(myStr5);
+
+
+
+/* Use Bracket Notation to Find the Last Character in a String */
+
+const lastName1 = "Lovelace";
+const lastLetterOfLastName = lastName1[lastName1.length - 1];
+
+
+
+/* Use Bracket Notation to Find the Nth-to-Last Character in a String */
+
+const lastName2 = "Lovelace";
+const secondToLastLetterOfLastName = lastName2[lastName2.length - 2];
+
+
+
