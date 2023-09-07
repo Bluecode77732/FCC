@@ -156,23 +156,19 @@ console.log(myData);
  * addSum(3);
 
  * addSum is a function without a return statement. 
- * The function will change the global sum variable but the returned value of the function is undefined.
+ **The function will change the global 'sum' variable but the returned value of the function is undefined.**
 */
 
-// Setup
 let sum = 0;
 
 function addThree() {
-  sum = sum + 3;  //3
+  sum = sum + 3;  //3 ; the 'sum' is global variable, not the addThree's local one.
 }
-
-// Only change code below this line
 
 function addFive() {
   sum = sum + 5;
   console.log(sum); //8 : as 'addThree' and 'addFive' are called at the same time in the below
 }
-// Only change code above this line
 
 addThree();
 addFive();
