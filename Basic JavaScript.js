@@ -206,3 +206,24 @@ console.log("After: " + JSON.stringify(testArr));
 
 
 
+/** Comparisons with the Logical And Operator
+ * Sometimes you will need to test more than one thing at a time. 
+ * The logical and operator (&&) returns true if and only if the operands to the left and right of it are true.
+ * 
+ * The same effect could be achieved by nesting an if statement inside another if. 
+*/
+
+function testLogicalAnd(val) {
+  // Only change code below this line
+
+  if (val >= 50) {
+    if (val <= 25) {
+      return "Yes";
+    }
+  }
+
+  // Only change code above this line
+  return "No";
+}
+
+testLogicalAnd(10);
