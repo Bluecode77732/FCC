@@ -1,8 +1,8 @@
 function Function1(thisParamIsTrue) {
-    if (thisParamIsTrue) {
-        return "then return 'true'."
-    }
-    return "No, it's not."
+  if (thisParamIsTrue) {
+    return "then return 'true'."
+  }
+  return "No, it's not."
 }
 
 
@@ -129,10 +129,10 @@ myArray[0] = 45;
 */
 
 const myArray = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
-    [[10, 11, 12], 13, 14],
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [[10, 11, 12], 13, 14],
 ];
 
 const myData = myArray[3][1];   //13
@@ -213,6 +213,8 @@ console.log("After: " + JSON.stringify(testArr));
  * The same effect could be achieved by nesting an if statement inside another if. 
 */
 
+/* mehod 1 */
+
 function testLogicalAnd(val) {
   // Only change code below this line
 
@@ -227,3 +229,81 @@ function testLogicalAnd(val) {
 }
 
 testLogicalAnd(10);
+
+/* method 2 */
+
+function testLogicalAnd(val) {
+  // Only change code below this line
+
+  if (val <= 50 && val >= 25) {
+    return "Yes";
+  }
+
+  // Only change code above this line
+  return "No";
+}
+
+testLogicalAnd(10);
+
+
+
+/**Golf Code
+  In the game of Golf, each hole has a par, meaning, 
+  the average number of strokes a golfer is expected to make in order to sink the ball in the hole to complete the play. 
+  Depending on how far above or below par your strokes are, there is a different nickname.
+
+  Your function will be passed par and strokes arguments. 
+  Return the correct string according to this table which lists the strokes in order of priority; top (highest) to bottom (lowest):
+
+  Strokes	Return
+  1	"Hole-in-one!"
+  <= par - 2	"Eagle"
+  par - 1	"Birdie"
+  par	"Par"
+  par + 1	"Bogey"
+  par + 2	"Double Bogey"
+  >= par + 3	"Go Home!"
+  
+  par and strokes will always be numeric and positive. 
+  We have added an array of all the names for your convenience. 
+*/
+
+const names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
+
+function golfScore(par, strokes) {
+  // Only change code below this line
+  if (strokes == 1) {
+    return [0];
+  }
+
+  else if (strokes <= par - 2) {
+    return [1]
+  }
+
+  else if (strokes <= par - 1) {
+    return [2]
+  }
+
+  else if (par) {
+    return [3]
+  }
+
+  else if (strokes <= par + 1) {
+    return [4]
+  }
+
+  else if (strokes <= par + 2) {
+    return [5]
+  }
+
+  else {
+    return [6]
+  }
+
+  // Only change code above this line
+}
+
+golfScore(5, 4);
+
+
+
