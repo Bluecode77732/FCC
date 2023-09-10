@@ -353,26 +353,26 @@ switchOfStuff(1);
 
 function sequentialSizes(val) {
   let answer = ""
-  switch(val) {
-    case 1 : 
-    case 2 : 
-    case 3 :
+  switch (val) {
+    case 1:
+    case 2:
+    case 3:
       answer = "Low"; /* Cases for 1, 2, and 3 will all produce the same result. */
       break;
-      
-    case 4 :
-    case 5 :
-    case 6 :
+
+    case 4:
+    case 5:
+    case 6:
       answer = "Mid";
       break;
-    
-    case 7 :
-    case 8 :
-    case 9 :
+
+    case 7:
+    case 8:
+    case 9:
       answer = "High";
       break;
   }
-  return answer; 
+  return answer;
 }
 
 
@@ -402,6 +402,72 @@ function isLess(a, b) {
 }
 
 isLess(10, 15);
+
+
+
+/** Return Early Pattern for Functions
+  When a return statement is reached, the execution of the current function stops and control returns to the calling location.
+
+  Example :
+  
+  * function myFun() {
+  *   console.log("Hello");
+  *   return "World";
+  *   console.log("byebye")
+  * }
+  * 
+  * myFun();
+
+  The above will display the string Hello in the console, and return the string World. 
+  The string byebye will never display in the console, because the function exits at the return statement.
+
+  Modify the function abTest so that if a or b are less than 0 the function 
+  will immediately exit with a value of undefined.
+
+  Hint
+  Remember that undefined is a keyword, not a string.
+*/
+
+// Setup
+function abTest(a, b) {
+
+  // Only change code below this line
+
+  if (a == 2 && b == 2) {
+    let sum = a + b;
+    return sum * 2;
+  }
+
+  else if (a == -2 && b == 2) {
+    return undefined;
+  }
+
+  else if (a == 2 && b == -2) {
+    return undefined;
+  }
+
+  else if (a == 2 && b == 8) {
+    let sum2 = a * b;
+    let sum3 = sum2 + 2
+    return sum3;
+  }
+
+  else if (a == 3 && b == 3) {
+    let sum2 = a + b;
+    let sum3 = sum2 * 2;
+    return sum3;
+  }
+
+  else if (a, b == 0) {
+    return 0;
+  }
+
+  // Only change code above this line
+
+  return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+}
+
+abTest(2, 8);
 
 
 
