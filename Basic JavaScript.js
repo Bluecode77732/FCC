@@ -308,10 +308,10 @@ golfScore(5, 4);
 
 
 /** Adding a Default Option in Switch Statements
- * In a switch statement you may not be able to specify all possible values as case statements. 
- * Instead, you can add the default statement which will be executed if no matching case statements are found. 
- * Think of it like the final else statement in an if/else chain.
- * A default statement should be the last case.
+  In a switch statement you may not be able to specify all possible values as case statements. 
+  Instead, you can add the default statement which will be executed if no matching case statements are found. 
+  Think of it like the final else statement in an if/else chain.
+  A default statement should be the last case.
 */
 
 function switchOfStuff(val) {
@@ -345,10 +345,10 @@ switchOfStuff(1);
 
 
 /** Multiple Identical Options in Switch Statements
- * If the break statement is omitted from a switch statement's case, 
- * the following case statement(s) are executed until a break is encountered. 
- * If you have multiple inputs with the same output, 
- * you can represent them in a switch statement like this:
+  If the break statement is omitted from a switch statement's case, 
+  the following case statement(s) are executed until a break is encountered. 
+  If you have multiple inputs with the same output, 
+  you can represent them in a switch statement like this:
 */
 
 function sequentialSizes(val) {
@@ -360,20 +360,48 @@ function sequentialSizes(val) {
       answer = "Low"; /* Cases for 1, 2, and 3 will all produce the same result. */
       break;
       
-      case 4 :
-      case 5 :
-      case 6 :
-        answer = "Mid";
-        break;
-      
-      case 7 :
-      case 8 :
-      case 9 :
-        answer = "High";
-        break;
-    }
+    case 4 :
+    case 5 :
+    case 6 :
+      answer = "Mid";
+      break;
+    
+    case 7 :
+    case 8 :
+    case 9 :
+      answer = "High";
+      break;
+  }
   return answer; 
 }
+
+
+
+/** Returning Boolean Values from Functions
+  You may recall from Comparison with the Equality Operator that-
+  all comparison operators return a boolean true or false value.
+  
+  Sometimes people use an if/else statement to do a comparison, like this:
+
+ * function isLess(a, b) {
+ *   if (a < b) {
+ *     return true;
+ *   } else {
+ *     return false;
+ *   }
+ * }
+ * 
+ * isLess(10, 15);
+
+  But there's a better way to do this. 
+  Since === returns true or false, we can return the result of the comparison:
+*/
+
+function isLess(a, b) {
+  return a <= b;
+}
+
+isLess(10, 15);
 
 
 
