@@ -470,20 +470,115 @@ function abTest(a, b) {
 abTest(2, 8);
 
 
-
-
-/* Solution of 'Return Early Pattern for Functions' */
+/* An efficient solution for the 'Return Early Pattern for Functions' */
 
 function abTest(a, b) {
 
-  if(a > 0 || b > 0) {
+  if (a > 0 || b > 0) {  /*  */
     return undefined;
   }
 
   return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
 }
 
-abTest(2, 8);
+abTest(0, 0);   /*  */
+abTest(2, 2);   /*  */
+abTest(-2, 2);  /*  */
+abTest(2, -2);  /*  */
+abTest(3, 3);   /*  */
+
+
+
+
+/** Counting Cards
+ * You will write a card counting function. It will receive a card parameter, 
+   which can be a number or a string, and increment 
+   or decrement the global count variable according to the card's value (see table). 
+ * The function will then return a string with the current count and the string Bet if the count is positive, 
+   or Hold if the count is zero or negative. 
+ * The current count and the player's decision (Bet or Hold) should be separated by a single space.
+
+ * Example Outputs: '-3 Hold' or '5 Bet'
+
+ * Hint
+ * Do NOT reset count to 0 when value is 7, 8, or 9.
+ * Do NOT return an array.
+ * Do NOT include quotes (single or double) in the output.
+*/
+
+/* let count = 0;
+
+function cc(card) {
+  // Only change code below this line
+
+  let highest = ["A", "K", "Q", "J", 10];
+  let highest_num = 10; 
+  let jack = 11;
+  let queen = 12;
+  let king = 13;
+  let ace = 14;
+
+  if(card > 1 && card < 7) {
+    count = count++
+    return "5 Bet";
+  } 
+
+  else if(card >= 7 || card <= 9) {
+    count = 0;
+    return "0 Hold";
+  } 
+
+  else if(card == 10 && card == highest[0, 1, 2, 3, 4] && card == queen && card == king && card == ace) {
+    return "-5 Hold";
+  } 
+
+  else if(card >= 10 && card == highest) {
+    count = count--
+    return "-5 Hold";
+  }
+  
+  else if(card >= 10 && card == highest) {
+    count = count--
+    return "-5 Hold";
+  }
+
+  // Only change code above this line
+}
+
+cc(2); cc(3); cc(7); cc('K'); cc('A'); */
+
+
+/* A solution for the 'Counting Cards' */
+
+let count = 0;
+
+function cc(card) {
+  // Only change code below this line
+  switch (card) {
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      count++;
+      break;
+    case 10:
+    case "J":
+    case "Q":
+    case "K":
+    case "A":
+      count--;
+      break;
+  }
+  if (count > 0) {
+    return count + " Bet";
+  } else {
+    return count + " Hold";
+  }
+  // Only change code above this line
+}
+
+cc(2); cc(3); cc(7); cc('K'); cc('A');
 
 
 
