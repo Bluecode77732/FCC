@@ -640,3 +640,37 @@ phoneticLookup("charlie");  //[Log] : "Chicago";
 
 
 
+/** Testing Objects for Properties
+ * To check if a property on a given object exists or not, you can use the '.hasOwnProperty()' method. 
+ * 'someObject.hasOwnProperty(someProperty)' returns true or false 
+   depending on if the property is found on the object or not.
+ * 
+ * Modify the function 'checkObj' to test if the object passed to the function parameter 'obj' 
+   contains the specific property passed to the function parameter checkProp. 
+ * If the property passed to checkProp is found on obj, 
+   return that property's value. If not, return Not Found.
+*/
+
+function checkObj(obj, checkProp) {
+  // Only change code below this line
+
+  if(obj.hasOwnProperty(checkProp)) {
+    return obj[checkProp];
+  } else {
+    return "Not Found";
+  }
+  
+  // Only change code above this line
+}
+
+checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift"); //[Log] : "pony"
+checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "pet");  //[Log] : "kitten"
+checkObj({city: "Seattle"}, "city");  //[Log] : "Seattle"
+
+checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "house");  //[Log] : "Not Found"
+checkObj({city: "Seattle"}, "district");  //[Log] : "Not Found"
+checkObj({pet: "kitten", bed: "sleigh"}, "gift"); //[Log] : "Not Found"
+
+
+
+
