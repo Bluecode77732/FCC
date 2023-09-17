@@ -582,3 +582,61 @@ cc(2); cc(3); cc(7); cc('K'); cc('A');
 
 
 
+
+/** Accessing Object Properties with Variables
+ * Another use of bracket notation on objects is to access a property which is stored as the value of a variable. 
+ * This can be very useful for iterating through an object's properties or when accessing a lookup table.
+ * Note that we do not use quotes around the variable name when using it to access the property 
+   because we are using the value of the variable, not the name.
+*/
+
+// Setup
+const testObj = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+
+// Only change code below this line
+const playerNumber = 16;  // Change this line
+const player = testObj[playerNumber];   // Change this line
+console.log(player);  //[LOG] : "Montana"
+
+
+
+
+/** Using Objects for Lookups 
+ * Objects can be thought of as a key/value storage, like a dictionary. 
+ * If you have tabular data, you can use an object to lookup values rather than a switch statement 
+   or an if/else chain.  
+ * This is most useful when you know that your input data is limited to a certain range.
+
+ * Convert the switch statement into an object called 'lookup'. 
+ * Use it to look up 'val' and assign the associated string to the 'result' variable.
+*/
+
+function phoneticLookup(val) {
+  let result = "";
+  const lookup = {
+    "alpha": "Adams",
+    "bravo": "Boston",
+    "charlie": "Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank"
+  };
+  /* 
+    After converting our case statements into object properties 
+    you can make use of the variable `result` to let the function return the correct value. 
+  */
+
+  result = lookup[val];
+  // Only change code above this line
+  return result;
+}
+
+phoneticLookup("charlie");  //[Log] : "Chicago";
+
+
+
+
