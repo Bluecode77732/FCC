@@ -655,7 +655,7 @@ function checkObj(obj, checkProp) {
   // Only change code below this line
 
   if(obj.hasOwnProperty(checkProp)) {
-    return obj[checkProp];
+    return obj[checkProp];  /* Why not Dot notation but bracket? Dot notation *looks for a specific property called “checkProp”*, where bracket notation looks *for a property called the value of the “checkProp” variable*.    */
   } else {
     return "Not Found";
   }
@@ -670,6 +670,30 @@ checkObj({city: "Seattle"}, "city");  //[Log] : "Seattle"
 checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "house");  //[Log] : "Not Found"
 checkObj({city: "Seattle"}, "district");  //[Log] : "Not Found"
 checkObj({pet: "kitten", bed: "sleigh"}, "gift"); //[Log] : "Not Found"
+
+
+
+
+/** Accessing Nested Objects
+ * Access the myStorage object and assign the contents of the glove box property to the gloveBoxContents variable. 
+
+ * Use dot notation for all properties where possible, otherwise use bracket notation.
+*/
+
+const myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+const gloveBoxContents = myStorage.car.inside["glove box"];
+console.log(gloveBoxContents);  //[Log] : "maps"
 
 
 
