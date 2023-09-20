@@ -654,22 +654,22 @@ phoneticLookup("charlie");  //[Log] : "Chicago";
 function checkObj(obj, checkProp) {
   // Only change code below this line
 
-  if(obj.hasOwnProperty(checkProp)) {
+  if (obj.hasOwnProperty(checkProp)) {
     return obj[checkProp];  /* Why not Dot notation but bracket? Dot notation *looks for a specific property called “checkProp”*, where bracket notation looks *for a property called the value of the “checkProp” variable*.    */
   } else {
     return "Not Found";
   }
-  
+
   // Only change code above this line
 }
 
-checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift"); //[Log] : "pony"
-checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "pet");  //[Log] : "kitten"
-checkObj({city: "Seattle"}, "city");  //[Log] : "Seattle"
+checkObj({ gift: "pony", pet: "kitten", bed: "sleigh" }, "gift"); //[Log] : "pony"
+checkObj({ gift: "pony", pet: "kitten", bed: "sleigh" }, "pet");  //[Log] : "kitten"
+checkObj({ city: "Seattle" }, "city");  //[Log] : "Seattle"
 
-checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "house");  //[Log] : "Not Found"
-checkObj({city: "Seattle"}, "district");  //[Log] : "Not Found"
-checkObj({pet: "kitten", bed: "sleigh"}, "gift"); //[Log] : "Not Found"
+checkObj({ gift: "pony", pet: "kitten", bed: "sleigh" }, "house");  //[Log] : "Not Found"
+checkObj({ city: "Seattle" }, "district");  //[Log] : "Not Found"
+checkObj({ pet: "kitten", bed: "sleigh" }, "gift"); //[Log] : "Not Found"
 
 
 
@@ -685,7 +685,7 @@ const myStorage = {
     "inside": {
       "glove box": "maps",
       "passenger seat": "crumbs"
-     },
+    },
     "outside": {
       "trunk": "jack"
     }
@@ -746,14 +746,14 @@ updateRecords(recordCollection, 5439, 'artist', 'ABBA'); */
 
 
 function updateRecords(records, id, prop, value) {
-  if(value === "") {
+  if (value === "") {
     delete records[id][prop];
-  } 
-  else if(prop !== "tracks" && value !== "") {
+  }
+  else if (prop !== "tracks" && value !== "") {
     records[id][prop] = value;
-  } 
-  else if(prop === "tracks" && value !== "") {
-    if(records[id].hasOwnProperty("tracks") === false) {
+  }
+  else if (prop === "tracks" && value !== "") {
+    if (records[id].hasOwnProperty("tracks") === false) {
       records[id][prop] = [];
     }
     records[id][prop].push(value);
@@ -816,10 +816,102 @@ const myArr = [2, 3, 4, 5, 6]; //If I sum all of thopse values in the 'myArray',
 
 // Only change code below this line
 let total = 0
-for(let i = 0; i < myArr.length; i++) {
+for (let i = 0; i < myArr.length; i++) {
   total += myArr[i];  //total = total + myArray.length
 }
 
+
+
+/** Nesting For Loops
+ * If you have a multi-dimensional array, 
+   you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. 
+   
+ * Here is an example:
+
+ * const arr = [
+ *   [1, 2], [3, 4], [5, 6]
+ * ];
+ * 
+ * for (let i = 0; i < arr.length; i++) {
+ *   for (let j = 0; j < arr[i].length; j++) {
+ *     console.log(arr[i][j]);
+ *   }
+ * }
+ * This outputs each sub-element in arr one at a time. Note that for the inner loop, we are checking the .length of arr[i], since arr[i] is itself an array.
+ * 
+ * Modify function multiplyAll so that it returns the product of all the numbers in the sub-arrays of arr.
+*/
+
+function multiplyAll(arr) {
+  let product = 1;
+  // Only change code below this line
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      product *= arr[i][j]; //'this was the only reason I was wrong.'
+    }
+  }
+
+  // Only change code above this line
+  return product;
+}
+
+multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
+
+
+
+/** Replace Loops using Recursion
+ * Recursion is the concept that a function can be expressed in terms of itself. 
+ * To help understand this, start by thinking about the following task: 
+   multiply the first n elements of an array to create the product of those elements. 
+
+ * Using a for loop, you could do this:
+  
+ *   function multiply(arr, n) {
+ *     let product = 1;
+ *     for (let i = 0; i < n; i++) {
+ *       product *= arr[i];
+ *     }
+ *     return product;
+ *   }
+  
+ * However, notice that multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]. 
+ * That means you can rewrite multiply in terms of itself and never need to use a loop.
+  
+ *   function multiply(arr, n) {
+ *     if (n <= 0) {
+ *       return 1;
+ *     } else {
+ *       return multiply(arr, n - 1) * arr[n - 1];
+ *     }
+ *   }
+  
+ * The recursive version of multiply breaks down like this. 
+   In the base case, where n <= 0, it returns 1. 
+   For larger values of n, it calls itself, but with n - 1. 
+   That function call is evaluated in the same way, calling multiply again until n <= 0. 
+   At this point, all the functions can return and the original multiply returns the answer.
+
+ * Note: Recursive functions must have a base case when they return 
+   without calling the function again (in this example, when n <= 0), 
+   otherwise they can never finish executing.
+ 
+ * Write a recursive function, sum(arr, n), that returns the sum of the first n elements of an array arr. 
+ */
+
+function sum(arr, n) {
+  // Only change code below this line
+  if (n <= 0) {
+    return 0;
+  } else if (arr, n) {
+    return sum(arr, n - 1) + arr[n - 1];
+  }
+  // Only change code above this line
+}
+
+sum([1], 0);  //Log : 0
+sum([2, 3, 4], 1);  //Log : 2
+sum([2, 3, 4, 5], 3); //Log : 9
 
 
 
