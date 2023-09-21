@@ -958,9 +958,9 @@ const contacts = [
   },
 ];
 
-function lookUpProfile(name, prop) {
+/*function lookUpProfile(name, prop) {
   // Only change code below this line
-  if(name === contacts[firstName] && prop === contacts[likes]) {
+   if(name === contacts[firstName] && prop === contacts[likes]) {
     return contacts[prop];
 
   } else if(name !== contacts[name]) {
@@ -968,6 +968,23 @@ function lookUpProfile(name, prop) {
 
   } else if(prop !== contacts[prop]) {
     return "No such property";
+  } 
+  // Only change code above this line
+}
+
+lookUpProfile("Akira", "likes");
+*/
+
+function lookUpProfile(name, prop) {
+  // Only change code below this line
+  for(let i = 0; i < name.length; i++) {
+    if(name === contacts[firstName]) {
+      return contacts[prop];
+    } else if(name === contacts[i] && prop === contacts[i]) {
+      return contacts.prop;
+    } else if(name === contacts[i] && prop !== contacts[i]) {
+      return "No such property";
+    }
   }
   // Only change code above this line
 }
