@@ -151,10 +151,29 @@ const increment = (number = 5, value = 1) => number + value;
 
 
 
-/** 
- * 
-*/
+/** Use the Rest Parameter with Function Parameters */
 
+const sum = (x, y, z) => {
+    const args = [x, y, z];
+    let total = 0;
+    for (let i = 0; i < args.length; i++) {
+        total += args[i];
+    }
+    return total;
+}
+
+
+const resetSum = (...args) => { /* resetSum should be an arrow function which uses the rest parameter syntax (...) on the args parameter. */
+    let total = 0;
+    for (let i = 0; i < args.length; i++) {
+        total += args[i];
+    }
+    return total;
+}
+
+console.log(resetSum(1, 2, 3, 4));  //10
+console.log(resetSum(5));   //5
+console.log(resetSum());    //0
 
 
 
