@@ -216,9 +216,33 @@ const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
 let arr2;
 
 arr2 = [...arr1];  // Change this line
-arr2 = {...arr1};  //Btw, was wondering and figured out that this line would be {0: 'JAN', 1: 'FEB', 2: 'MAR', 3: 'APR', 4: 'MAY'}.
+arr2 = { ...arr1 };  //Btw, was wondering and figured out that this line would be {0: 'JAN', 1: 'FEB', 2: 'MAR', 3: 'APR', 4: 'MAY'}.
 
 console.log(arr2);
+
+
+
+
+/** Use Destructuring Assignment to Extract Values from Objects */
+
+const HIGH_TEMPERATURES = {
+    yesterday: 75,
+    today: 77,
+    tomorrow: 80
+};
+
+// Only change code below this line
+
+/* before es6 :
+const today = HIGH_TEMPERATURES.today;
+const tomorrow = HIGH_TEMPERATURES.tomorrow; */
+
+/* after es6 :  */
+const {today, tomorrow} = HIGH_TEMPERATURES;    
+
+// Only change code above this line
+
+
 
 
 
