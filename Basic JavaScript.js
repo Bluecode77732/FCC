@@ -875,7 +875,7 @@ multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
  *     return product;
  *   }
   
- * However, notice that multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]. 
+ * However, notice that 'multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]'. 
  * That means you can rewrite multiply in terms of itself and never need to use a loop.
   
  *   function multiply(arr, n) {
@@ -897,7 +897,7 @@ multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
    otherwise they can never finish executing.
  
  * Write a recursive function, sum(arr, n), that returns the sum of the first n elements of an array arr. 
- */
+*/
 
 function sum(arr, n) {
   // Only change code below this line
@@ -1213,4 +1213,28 @@ console.log(countdown(5));
 
 
 
+/** Use Recursion to Create a Range of Numbers
+ * Continuing from the previous challenge, 
+ * we provide you another opportunity to create a recursive function to solve a problem.
+ * 
+ * We have defined a function named rangeOfNumbers with two parameters. 
+ * The function should return an array of integers which begins 
+   with a number represented by the 'startNum' parameter 
+   and ends with a number represented by the 'endNum' parameter. 
+   
+ * The starting number will always be less than or equal to the ending number. 
+ * Your function must use recursion by calling itself and not use loops of any kind. 
+ * It should also work for cases where both 'startNum' and 'endNum' are the same.
+*/
 
+function rangeOfNumbers(startNum, endNum) {
+  if(startNum > endNum) {
+    return [];
+  } else {
+    let arr = rangeOfNumbers(startNum, endNum - 1);
+    arr.push(endNum);
+    return arr;
+  }
+};
+
+console.log(rangeOfNumbers(1, 5));
