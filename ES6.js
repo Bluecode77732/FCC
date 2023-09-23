@@ -121,3 +121,40 @@ function checkScope() {
 
 
 
+
+/** Use Arrow Functions to Write Concise Anonymous Functions
+ 
+ * In JavaScript, we often don't need to name our functions, 
+ * especially when passing a function as an argument to another function. 
+ * Instead, we create inline functions. 
+ * We don't need to name these functions because we do not reuse them anywhere else. 
+ * 
+ ** ES6 provides us with the syntactic sugar *to not have to write anonymous functions this way*. **
+*/
+
+
+
+
+/** Set Default Parameters for Your Functions
+ * In order to help us create more flexible functions, ES6 introduces default parameters for functions.
+ * 
+ * The default parameter kicks in when the argument is not specified (it is undefined). 
+ * As you can see in the example above, the parameter name will receive 
+   its default value Anonymous when you do not provide a value for the parameter. 
+ * You can add default values for as many parameters as you want.
+*/
+
+// Only change code below this line
+const increment = (number = 5, value = 1) => number + value;
+// Only change code above this line
+
+
+
+
+/** 
+ * 
+*/
+
+
+
+
