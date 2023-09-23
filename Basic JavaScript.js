@@ -1231,8 +1231,8 @@ function rangeOfNumbers(startNum, endNum) {
   if(startNum > endNum) {
     return [];
   } else {
-    let arr = rangeOfNumbers(startNum, endNum - 1);
-    arr.push(endNum);
+    let arr = rangeOfNumbers(startNum, endNum - 1); //It will function as subtracting from 'arr' each times when it called and will return '[1]', '[1, 2]', '[1, 2, 3]', etc.
+    arr.push(endNum); //If 'unshift' was in the place, it would have returned '[3, 2, 1]', '[2, 1]', '[1]', etc.
     return arr;
   }
 };
