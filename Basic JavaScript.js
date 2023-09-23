@@ -915,7 +915,7 @@ sum([2, 3, 4, 5], 3); //Log : 9
 
 
 
-/** Profile Lookup
+/** Profile Lookup - Working On Progress
  *  
  * A lookUpProfile function that takes name and a property (prop) as arguments has been pre-written for you.
 
