@@ -225,10 +225,10 @@ console.log(arr2);
 
 /** Use Destructuring Assignment to Extract Values from Objects */
 
-const HIGH_TEMPERATURES = {
+const HIGH_TEMPERATURES1 = {
     yesterday: 75,
-    today: 77,
-    tomorrow: 80
+    today1: 77,
+    tomorrow1: 80
 };
 
 // Only change code below this line
@@ -238,23 +238,41 @@ const today = HIGH_TEMPERATURES.today;
 const tomorrow = HIGH_TEMPERATURES.tomorrow; */
 
 /* after es6 :  */
-const {today, tomorrow} = HIGH_TEMPERATURES;    
+const { today1, tomorrow1 } = HIGH_TEMPERATURES1;
 
 // Only change code above this line
 
 
 
 
+/** Use Destructuring Assignment to Assign Variables from Objects
 
-
-/** 
- * 
- * 
- * 
- * 
- * 
+ * Destructuring allows you to assign a new variable name when extracting values. 
+ * You can do this by putting the new name after a colon when assigning the value.
 */
 
+const HIGH_TEMPERATURES2 = {
+    yesterday: 75,
+    today2: 77,
+    tomorrow2: 80
+};
+
+// Only change code below this line
+
+/* before es6 :
+const highToday = HIGH_TEMPERATURES2.today;
+const highTomorrow = HIGH_TEMPERATURES2.tomorrow; */
+
+/* after es6 : */
+const {highToday : today2, highTomorrow : tomorrow2} = HIGH_TEMPERATURES2;
+
+// Only change code above this line
 
 
 
+
+/** Use Destructuring Assignment to Assign Variables from Nested Objects
+ * 
+ * 
+ * 
+*/ 
