@@ -382,6 +382,7 @@ const result1 = {
   failure: ["no-var", "var-on-top", "linebreak"],
   skipped: ["no-extra-semi", "no-dup-keys"]
 };
+
 function makeList1(arr1) {
   // Only change code below this line
   const failureItems1 = [];
@@ -402,6 +403,7 @@ const result2 = {
   failure: ["no-var", "var-on-top", "linebreak"],
   skipped: ["no-extra-semi", "no-dup-keys"]
 };
+
 function makeList2(arr2) {
   // Only change code below this line
 
@@ -413,4 +415,62 @@ function makeList2(arr2) {
 }
 
 const failuresList2 = makeList2(result2.failure);
+
+
+
+
+/** Write Concise Object Literal Declarations Using Object Property Shorthand */ 
+
+const createPerson = (name, age, gender) => {
+  // Only change code below this line
+  return {
+    name: name,
+    age: age,
+    gender: gender
+  };
+  // Only change code above this line
+};
+
+
+
+
+/** Use class Syntax to Define a Constructor Function 
+ * ES6 provides a new syntax to create objects, using the class keyword.
+
+ * In ES5, an object can be created by defining a constructor function 
+   and using the new keyword to instantiate the object.
+
+ * In ES6, a class declaration has a constructor method that is invoked with the new keyword. 
+
+ * If the constructor method is not explicitly defined, then it is implicitly defined with no arguments.
+   
+ * It should be noted that the class keyword declares a new function, to which a constructor is added. 
+
+ * This constructor is invoked when new is called to create a new object.
+ 
+ * Note: UpperCamelCase should be used by convention for ES6 class names, as in SpaceShuttle used above.
+ * 
+ * The constructor method is a special method for creating and initializing an object created with a class. 
+ 
+ * You will learn more about it in the Object Oriented Programming section of the JavaScript Algorithms 
+   And Data Structures Certification.
+*/
+
+// Only change code below this line
+class Vegetable {
+  constructor(name) {   //I think it's same as 'const name = name'
+    this.name = name;
+  }
+};
+// Only change code above this line
+
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); // Should display 'carrot'
+
+
+
+
+/**  */
+
+
 
