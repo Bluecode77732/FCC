@@ -368,6 +368,49 @@ const half = ({max, min}) => (max + min) / 2.0;
 
 
 
+/** Create Strings using Template Literals
+ * A new feature of ES6 is the template literal. 
+ * This is a special type of string that makes creating complex strings easier.
+ 
+ * Template literals allow you to create multi-line strings 
+   and to use string interpolation features to create strings.
+*/
+
+/* First Method */
+const result1 = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+function makeList1(arr1) {
+  // Only change code below this line
+  const failureItems1 = [];
+  for(let i = 0; i < arr1.length; i++) {
+    failureItems1.push(`<li class="text-warning">${arr1[i]}</li>`)
+  }
+  // Only change code above this line
+
+  return failureItems1;
+}
+
+const failuresList1 = makeList1(result1.failure);
 
 
+/* Second Method */
+const result2 = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+function makeList2(arr2) {
+  // Only change code below this line
+
+  const failureItems2 = arr2.map(i => `<li class="text-warning">${i}</li>`);
+
+  // Only change code above this line
+
+  return failureItems2;
+}
+
+const failuresList2 = makeList2(result2.failure);
 
