@@ -470,7 +470,20 @@ console.log(carrot.name); // Should display 'carrot'
 
 
 
-/**  */
-
+/** Use getters and setters to Control Access to an Object  
+ * you can obtain values from an object and set the value of a property within an object.
+ * These are classically called getters and setters.
+ * 
+ * Getter functions are meant to simply return (get) the value of an object's private variable 
+   to the user without the user directly accessing the private variable.
+ * 
+ * Setter functions are meant to modify (set) the value of an object's private variable 
+   based on the value passed into the setter function. 
+ * 
+ * This change could involve calculations, or even overwriting the previous value completely.
+ * 
+ * Note: It is convention to precede the name of a private variable with an underscore (_). 
+ * However, the practice itself does not make a variable private.
+*/
 
 
