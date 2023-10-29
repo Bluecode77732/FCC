@@ -20,28 +20,61 @@ let app = express();
 }); */
 
 
-/* app.use("/public", express.static(__dirname + "/public")); */
+/* 4# - Serve Static Assets */
+
+app.use("/public", express.static(__dirname + "/public"));
 
 
-/* Serve JSON on a Specific Route */
-/* app.get("/json", (req, res) => {
-  res.json({
-    "message": "Hello json"
-  });
+/* 5# - Serve JSON on a Specific Route */
+
+app.get("/", function (req, res) {
+  res.sendFile(__dirname + "/views/index.html");
 });
-*/
+
 
 /* Use the .env File */
 app.get("/json", (req, res) => {
-    let message = "Hello json";
-    if (process.env.MESSAGE_STYLE === 'uppercase') {
-        message = message.toUpperCase();
-    }
-    res.json({
-        "message": message
-    });
+  let message = "Hello json";
+  if (process.env.MESSAGE_STYLE === 'uppercase') {
+    message = message.toUpperCase();
+  }
+  res.json({
+    "message": message
+  });
 });
 
+
+/* 6# - Use the .env File */
+
+app.get("/json", (req, res) => {
+  if (process.env["MESSAGE_STYLE"] === "uppercase") {
+    res.json({ "message": "HELLO JSON" });
+  } else {
+    res.json({ "message": "Hello json" });
+  }
+});
+
+
+/* 7# - Implement a Root-Level Request Logger Middleware */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports = app;
 
 
 
