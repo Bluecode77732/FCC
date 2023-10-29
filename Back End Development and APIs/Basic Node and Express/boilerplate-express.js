@@ -20,6 +20,14 @@ let app = express();
 }); */
 
 
+/* 7# - Implement a Root-Level Request Logger Middleware : Note: Express evaluates functions in the order they appear in the code. This is true for middleware too. If you want it to work for all the routes, it should be mounted before them. */
+
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.path} - ${req.ip}`);
+  next();
+});
+
+
 /* 4# - Serve Static Assets */
 
 app.use("/public", express.static(__dirname + "/public"));
@@ -33,7 +41,7 @@ app.get("/", function (req, res) {
 
 
 /* Use the .env File */
-app.get("/json", (req, res) => {
+/* app.get("/json", (req, res) => {
   let message = "Hello json";
   if (process.env.MESSAGE_STYLE === 'uppercase') {
     message = message.toUpperCase();
@@ -41,7 +49,7 @@ app.get("/json", (req, res) => {
   res.json({
     "message": message
   });
-});
+}); */
 
 
 /* 6# - Use the .env File */
@@ -55,11 +63,7 @@ app.get("/json", (req, res) => {
 });
 
 
-/* 7# - Implement a Root-Level Request Logger Middleware */
-
-
-
-
+/* 8# - Chain Middleware to Create a Time Server */
 
 
 
