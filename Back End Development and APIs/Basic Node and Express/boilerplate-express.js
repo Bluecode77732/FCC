@@ -65,10 +65,24 @@ app.get("/json", (req, res) => {
 
 /* 8# - Chain Middleware to Create a Time Server */
 
+app.get("/now", function(req, res, next) {
+  req.time = new Date().toString()  // Hypothetical synchronous operation
+  next();
+}, function(req, res) {
+  res.json({"time" : req.now});
+});
 
 
+/* 9# -  */
 
 
+/* 10# -  */
+
+
+/* 11# -  */
+
+
+/* 12# -  */
 
 
 
