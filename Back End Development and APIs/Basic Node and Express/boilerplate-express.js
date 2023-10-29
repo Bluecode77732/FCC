@@ -73,16 +73,20 @@ app.get("/now", function(req, res, next) {
 });
 
 
-/* 9# -  */
+/* 9# - Get Route Parameter Input from the Client */
+
+app.get("/:word/echo", (req, res) => {
+  res.json({echo : req.params.word});
+});
 
 
-/* 10# -  */
+/* 10# - Get Query Parameter Input from the Client */
 
 
-/* 11# -  */
+/* 11# - Use body-parser to Parse POST Requests */
 
 
-/* 12# -  */
+/* 12# - Get Data from POST Requests */
 
 
 
