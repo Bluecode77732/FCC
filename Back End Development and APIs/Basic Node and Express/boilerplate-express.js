@@ -82,6 +82,9 @@ app.get("/:word/echo", (req, res) => {
 
 /* 10# - Get Query Parameter Input from the Client */
 
+app.get("/name", function(req, res) {
+  res.json({ name : req.query.first + " " + req.query.last});
+});
 
 /* 11# - Use body-parser to Parse POST Requests */
 
