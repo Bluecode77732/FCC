@@ -88,28 +88,12 @@ app.get("/name", function(req, res) {
 
 /* 11# - Use body-parser to Parse POST Requests */
 
+app.use("/", (req, res) => {
+  let bodyParser = require("body-parser");
+  res.json({});
+})
 
 /* 12# - Get Data from POST Requests */
-
-
-
-
-
-
-
-
-
-module.exports = app;
-
-
-
-
-
-
-
-
-
-
 
 
 
