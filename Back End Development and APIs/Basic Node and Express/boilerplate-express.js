@@ -97,7 +97,7 @@ app.get("/name", function (req, res) {
 /* 12# - Get Data from POST Requests */
 
 app.post("/name", function (req, res) {
-  res.json({ name: req.query.first + " " + req.query.last });
+  res.json({ name: req.body.first + " " + req.body.last });
 });
 
 
